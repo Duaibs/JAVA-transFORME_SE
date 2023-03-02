@@ -1,23 +1,19 @@
 package exercicios.sequenciais;
 
-import java.util.Scanner;
-
+import javax.swing.JOptionPane;
 
 public class ex004 {
+	//Leia o nome do usuário e um número N. Escreva o nome dele na tela N vezes.
 
 	public static void main(String[] args) {
-		Scanner scan = new Scanner(System.in);
+		String nome = JOptionPane.showInputDialog("Qual é o seu nome?");
+		int limite = Integer.parseInt(JOptionPane.showInputDialog("Digite um número inteiro, \n seu nome será repetido nesse número de vezes:"));
+		int cont = 1;
 		
-		System.out.println("Digite um valor: ");
-		int num1 = scan.nextInt();
-
-		System.out.println("Digite outro valor: ");
-		int num2 = scan.nextInt();
-		
-		int soma = num1 + num2;
-		System.out.println("A somatória dos dois números é " + soma);
-		
-		scan.close();
-		
+		do {
+			System.out.println(nome + ("(" + cont + ")"));
+			cont = cont + 1;
+		} while (cont <= limite);
 	}
+
 }
